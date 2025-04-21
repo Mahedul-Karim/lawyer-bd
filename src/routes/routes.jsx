@@ -15,12 +15,8 @@ export const router = createBrowserRouter([
         index: true,
         element: <Home />,
         loader: async () => {
-          const promise = new Promise((resolve) =>
-            setTimeout(() => {
-              resolve({ hello: "World" });
-            }, 500)
-          );
-          return promise;
+          const lawyers = await fetch("/lawyers.json");
+          return lawyers;
         },
         hydrateFallbackElement: <FullPageSpinner />,
       },
