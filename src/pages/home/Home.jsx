@@ -1,4 +1,3 @@
-import Loader from "@/components/common/loader/Loader";
 import Banner from "@/components/home/Banner";
 import BestLawyers from "@/components/home/BestLawyers";
 import Container from "@/components/layout/Container";

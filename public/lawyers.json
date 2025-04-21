@@ -1,0 +1,110 @@
+[
+  {
+    "image": "/lawyers/lawyer-1.jpg",
+    "name": "Arif Hossain",
+    "speciality": "Criminal Law",
+    "experience": 10,
+    "licenseNumber": "BD-12345678",
+    "fee": 2500,
+    "availability": ["Monday", "Wednesday", "Friday"]
+  },
+  {
+    "image": "/lawyers/lawyer-2.jpg",
+    "name": "Nusrat Jahan",
+    "speciality": "Family Law",
+    "experience": 7,
+    "licenseNumber": "BD-09876543",
+    "fee": 2000,
+    "availability": ["Sunday", "Tuesday", "Thursday"]
+  },
+  {
+    "image": "/lawyers/lawyer-3.jpg",
+    "name": "Tanvir Alam",
+    "speciality": "Corporate Law",
+    "experience": 12,
+    "licenseNumber": "BD-11223344",
+    "fee": 3500,
+    "availability": ["Monday", "Thursday"]
+  },
+  {
+    "image": "/lawyers/lawyer-4.jpg",
+    "name": "Samira Khan",
+    "speciality": "Immigration Law",
+    "experience": 5,
+    "licenseNumber": "BD-55667788",
+    "fee": 1800,
+    "availability": ["Tuesday", "Wednesday", "Saturday"]
+  },
+  {
+    "image": "/lawyers/lawyer-5.jpg",
+    "name": "Fahim Rahman",
+    "speciality": "Civil Litigation",
+    "experience": 15,
+    "licenseNumber": "BD-66778899",
+    "fee": 4000,
+    "availability": ["Sunday", "Monday", "Friday"]
+  },
+  {
+    "image": "/lawyers/lawyer-6.jpg",
+    "name": "Sadia Ahmed",
+    "speciality": "Environmental Law",
+    "experience": 4,
+    "licenseNumber": "BD-12312312",
+    "fee": 2200,
+    "availability": ["Wednesday", "Saturday"]
+  },
+  {
+    "image": "/lawyers/lawyer-7.jpg",
+    "name": "Mahmud Hasan",
+    "speciality": "Constitutional Law",
+    "experience": 11,
+    "licenseNumber": "BD-32132132",
+    "fee": 3200,
+    "availability": ["Monday", "Tuesday"]
+  },
+  {
+    "image": "/lawyers/lawyer-8.jpg",
+    "name": "Raisa Chowdhury",
+    "speciality": "Labor Law",
+    "experience": 6,
+    "licenseNumber": "BD-44455566",
+    "fee": 2100,
+    "availability": ["Thursday", "Friday", "Saturday"]
+  },
+  {
+    "image": "/lawyers/lawyer-9.jpg",
+    "name": "Shahriar Kabir",
+    "speciality": "Tax Law",
+    "experience": 8,
+    "licenseNumber": "BD-98765432",
+    "fee": 3000,
+    "availability": ["Sunday", "Tuesday", "Thursday"]
+  },
+  {
+    "image": "/lawyers/lawyer-10.jpg",
+    "name": "Mahiya Islam",
+    "speciality": "Bankruptcy Law",
+    "experience": 9,
+    "licenseNumber": "BD-11122233",
+    "fee": 2600,
+    "availability": ["Wednesday", "Friday", "Saturday"]
+  },
+  {
+    "image": "/lawyers/lawyer-11.jpg",
+    "name": "Jahidul Islam",
+    "speciality": "Property Law",
+    "experience": 14,
+    "licenseNumber": "BD-90909090",
+    "fee": 3800,
+    "availability": ["Monday", "Thursday", "Saturday"]
+  },
+  {
+    "image": "/lawyers/lawyer-12.jpg",
+    "name": "Farzana Rahman",
+    "speciality": "Human Rights Law",
+    "experience": 3,
+    "licenseNumber": "BD-87878787",
+    "fee": 1700,
+    "availability": ["Sunday", "Tuesday", "Friday"]
+  }
+]
