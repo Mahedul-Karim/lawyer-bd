@@ -1,3 +1,4 @@
+import FullPageSpinner from "@/components/common/loader/FullPageSpinner";
 import Banner from "@/components/home/Banner";
 import BestLawyers from "@/components/home/BestLawyers";
 import Counter from "@/components/home/Counter";
