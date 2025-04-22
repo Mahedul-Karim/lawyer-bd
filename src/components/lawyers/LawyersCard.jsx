@@ -9,8 +9,7 @@ const LawyersCard = ({
   name,
   speciality,
   experience,
-  licenseNumber,
-  id,
+  licenseNumber
 }) => {
   return (
     <Card className="border-stroke shadow-none">
@@ -37,7 +36,7 @@ const LawyersCard = ({
             &reg; License No: {licenseNumber}
           </p>
           <Link
-            to={`/lawyer/${id}`}
+            to={`/lawyer/${licenseNumber}`}
             className={`${buttonVariants({ variant: "outline" })} !rounded-full hover:bg-transparent border-secondary/20 text-secondary !shadow-none hover:text-secondary`}
           >
             View Details
