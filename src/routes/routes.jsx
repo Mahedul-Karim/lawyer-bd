@@ -2,6 +2,7 @@ import FullPageSpinner from "@/components/common/loader/FullPageSpinner";
 import Loader from "@/components/common/loader/Loader";
 import Error from "@/components/error/Error";
 import Root from "@/layout/Root";
+import Blogs from "@/pages/blogs/Blogs";
 import Bookings from "@/pages/bookings/Bookings";
 import Home from "@/pages/home/Home";
 import LawyerDetails from "@/pages/lawyer-details/LawyerDetails";
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
         },
         hydrateFallbackElement: <FullPageSpinner />,
       },
+      {
+        path:'/blogs',
+        element:<Blogs />
+      }
     ],
   },
   {

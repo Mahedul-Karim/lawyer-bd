@@ -3,11 +3,15 @@ import FeeCharts from "@/components/bookings/FeeCharts";
 import Container from "@/components/layout/Container";
 import { buttonVariants } from "@/components/ui/button";
 import { useAppointment } from "@/context/BookingsProvider";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router";
 
 const Bookings = () => {
   const { lawyers = [] } = useAppointment();
+
+  useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
 
   if (lawyers.length === 0) {
     return <Container className="flex flex-col items-center justify-center sm:py-16 py-8 gap-2">

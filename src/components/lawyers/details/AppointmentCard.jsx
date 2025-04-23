@@ -7,12 +7,17 @@ import { toast } from "sonner";
 import { useAppointment } from "@/context/BookingsProvider";
 import { useNavigate } from "react-router";
 
-const AppointmentCard = ({ info }) => {
+const AppointmentCard = ({ info, isAvailable }) => {
   const { lawyers, setLawyers } = useAppointment();
 
   const navigate = useNavigate();
 
   const handleAppointment = () => {
+    if (!isAvailable) {
+      toast.error(`${info.name} is not available today`);
+      return;
+    }
+
     const allAppointments = [...lawyers];
 
     const existingAppointment = allAppointments.find(
@@ -25,12 +30,12 @@ const AppointmentCard = ({ info }) => {
     }
 
     allAppointments.push(info);
-    localStorage.setItem('lawyers',JSON.stringify(allAppointments));
+    localStorage.setItem("lawyers", JSON.stringify(allAppointments));
     setLawyers(allAppointments);
     toast.success(
       `You have successfully booked an appointment with ${info.name}`
     );
-    navigate('/my-bookings')
+    navigate("/my-bookings");
   };
 
   return (
@@ -48,16 +53,24 @@ const AppointmentCard = ({ info }) => {
         <div className="flex items-center justify-between pb-4 border-b border-solid border-stroke">
           <h4 className="text-dark font-sans font-bold">Availability</h4>
           <div>
-            <Badge className="rounded-full bg-primary/10 text-primary border border-solid border-primary/20">
-              Lawyer Available Today
+            <Badge
+              className={`rounded-full  border border-solid  ${
+                isAvailable
+                  ? "bg-primary/10 text-primary border-primary/20"
+                  : "bg-tertiary/10 text-tertiary border-tertiary/20"
+              } `}
+            >
+              {isAvailable
+                ? "Lawyer Available Today"
+                : "Lawyer Unavailable Today"}
             </Badge>
           </div>
         </div>
         <div>
-          <Badge className="rounded-full bg-yellow/10 text-yellow border border-solid border-yellow/20 mt-4 text-sm [&>svg]:size-4 flex items-center gap-2">
-            <CircleAlert /> Due to high client volume, we are currently
-            accepting appointments for today only. We appreciate your
-            understanding and cooperation.
+          <Badge className="rounded-full bg-yellow/10 text-yellow border border-solid border-yellow/20 mt-4 text-sm [&>svg]:size-4 flex  gap-2 whitespace-pre-wrap">
+            <CircleAlert className="shrink-0" /> Due to high client volume, we
+            are currently accepting appointments for today only. We appreciate
+            your understanding and cooperation.
           </Badge>
         </div>
         <Button

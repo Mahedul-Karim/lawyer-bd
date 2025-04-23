@@ -1,16 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import { Link } from "react-router";
+
+const dayMap = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
 const LawyersCard = ({
   image,
   name,
   speciality,
   experience,
-  licenseNumber
+  licenseNumber,
+  availability,
 }) => {
+  const [isAvailable, setIsAvailable] = useState(false);
+
+  useEffect(() => {
+    if (!availability) return;
+
+    const today = dayMap[new Date().getDay()];
+
+    const lawyerAvailable = availability?.includes(today);
+
+    if (lawyerAvailable) {
+      setIsAvailable(true);
+    }
+  }, []);
+
   return (
     <Card className="border-stroke shadow-none">
       <CardContent className="flex xs:flex-row flex-col gap-4 lg:px-6 xs:px-3 px-6">
@@ -23,8 +48,14 @@ const LawyersCard = ({
         </div>
         <div className="flex flex-col gap-1 grow justify-between">
           <div className="flex xs:items-center xs:flex-row flex-col gap-2">
-            <Badge className="rounded-full bg-primary/10 text-primary">
-              Available
+            <Badge
+              className={`rounded-full  ${
+                isAvailable
+                  ? "bg-primary/10 text-primary"
+                  : "bg-tertiary/10 text-tertiary"
+              } `}
+            >
+              {isAvailable ? "Available" : "Unavailable"}
             </Badge>
             <Badge className="rounded-full bg-secondary/10 text-secondary">
               {experience}+ Years Experience
@@ -37,7 +68,9 @@ const LawyersCard = ({
           </p>
           <Link
             to={`/lawyer/${licenseNumber}`}
-            className={`${buttonVariants({ variant: "outline" })} !rounded-full hover:bg-transparent border-secondary/20 text-secondary !shadow-none hover:text-secondary`}
+            className={`${buttonVariants({
+              variant: "outline",
+            })} !rounded-full hover:bg-transparent border-secondary/20 text-secondary !shadow-none hover:text-secondary`}
           >
             View Details
           </Link>

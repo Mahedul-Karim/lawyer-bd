@@ -49,6 +49,7 @@ const BestLawyers = () => {
               speciality={lawyer.speciality}
               experience={lawyer.experience}
               licenseNumber={lawyer.licenseNumber}
+              availability={lawyer.availability}
             />
           ))}
       </div>
